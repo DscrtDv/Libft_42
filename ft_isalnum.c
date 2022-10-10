@@ -1,8 +1,19 @@
-int ft_isalpha(int c);
-int ft_isdigit(int c);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_isalnum.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: tcensier <marvin@codam.nl>                   +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/07 12:39:22 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/07 15:59:22 by tcensier      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    return ((ft_isalpha(c) || ft_isdigit(c)) ? 1 : 0);
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }
-

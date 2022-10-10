@@ -1,21 +1,25 @@
-#include <stdio.h>
-size_t  ft_strlen(const char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_strlen.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: tcensier <marvin@codam.nl>                   +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/07 12:40:24 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/07 16:04:04 by tcensier      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
-    size_t  len;
+	size_t	len;
 
-    len = 0;
-    while (*str != 0)
-    {
-        str++;
-        len++;
-    }
-    return len;
-}
-
-int main(void){
-    
-    char *str = "hello \0 world!";
-    printf("size of string /%s/ is: %ld \n",str , ft_strlen(str));
-    printf("size of string built in /%s/ is: %ld \n",str , strlen(str));
-    return 0;
+	len = 0;
+	while (*str != 0)
+	{
+		str++;
+		len++;
+	}
+	return (len);
 }
