@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcpy.c                                       :+:    :+:            */
+/*   ft_strchr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 08:42:20 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/13 10:25:13 by tcensier      ########   odam.nl         */
+/*   Created: 2022/10/13 11:39:13 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/13 14:27:18 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t		i;
+	char	temp;
 
-	i = 0;
-	while (*src && i + 1 < dstsize)
-	{
-		*dest++ = *src++;
-		i++;
-	}
-	if (i < dstsize)
-		*dest = '\0';
-	while (*src++)
-		i++;
-	return (i);
+	temp = c;
+	while (*s != temp)
+		if (*s++ == '\0' && temp)
+			return (0);
+	return ((char *)s);
 }

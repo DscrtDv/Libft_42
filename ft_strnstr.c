@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcpy.c                                       :+:    :+:            */
+/*   ft_strnstr.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 08:42:20 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/13 10:25:13 by tcensier      ########   odam.nl         */
+/*   Created: 2022/10/13 16:29:32 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/13 16:35:48 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t		i;
+	const char	*h;
+	const char	*n;
 
-	i = 0;
-	while (*src && i + 1 < dstsize)
+	h = haystack;
+	n = needle;
+	while (len--)
 	{
-		*dest++ = *src++;
-		i++;
+		
 	}
-	if (i < dstsize)
-		*dest = '\0';
-	while (*src++)
-		i++;
-	return (i);
 }
