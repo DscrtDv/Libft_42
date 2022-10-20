@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_split.c                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: tcensier <marvin@codam.nl>                   +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/20 12:59:39 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/20 13:00:19 by tcensier      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 size_t	ft_splitcount(char const *s, char c)
@@ -24,7 +35,7 @@ char	**ft_split(char const *s, char c)
 	char	**result;
 	size_t	len;
 	size_t	i;
-	
+
 	if (!s)
 		return (0);
 	result = (char **) malloc(sizeof(char *) * ft_splitcount(s, c) + 1);

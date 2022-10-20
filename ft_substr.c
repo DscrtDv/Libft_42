@@ -1,15 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_substr.c                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: tcensier <marvin@codam.nl>                   +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/10/20 13:02:00 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/20 13:02:33 by tcensier      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	/* s : string from which to create substring
-	 * start : start index of s
-	 * len : max length of sub
-	 * returns: substring or NULL if failed to allocate
-	 */
-
 	char	*sub_s;
-	
+
 	if (!s)
 		return (0);
 	if (ft_strlen(s) < start)
