@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_putstr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 16:29:32 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/21 11:03:13 by tcensier      ########   odam.nl         */
+/*   Created: 2022/10/21 11:45:32 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/21 11:46:41 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-	size_t	n_len;
-	size_t	index;
-
-	n_len = ft_strlen(needle);
-	index = 0;
-	if (haystack == needle || !n_len)
-		return ((char *)haystack);
-	while (haystack[index] && index < len)
+	while (*s)
 	{
-		i = 0;
-		while (needle[i] && haystack[index + i] == needle[i] && index + i < len)
-			++i;
-		if (i == n_len)
-			return ((char *)haystack + index);
-		++index;
+		ft_putchar_fd(*s, fd);
+		++s;
 	}
-	return (NULL);
 }

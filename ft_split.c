@@ -5,55 +5,54 @@
 /*                                                     +:+                    */
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/20 12:59:39 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/20 13:00:19 by tcensier      ########   odam.nl         */
+/*   Created: 2022/10/21 11:19:17 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/21 18:42:08 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-size_t	ft_splitcount(char const *s, char c)
+size_t	splitcount(const char *s, char c)
 {
-	size_t	splitcount;
+	size_t	result;
 
-	splitcount = 0;
+	result = 0;
 	while (*s)
 	{
 		if (*s != c)
 		{
-			++splitcount;
+			++result;
 			while (*s && *s != c)
 				++s;
 		}
 		else
 			++s;
 	}
-	return (splitcount);
+	return (result);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**result;
-	size_t	len;
+	size_t	t_len;
 	size_t	i;
 
-	if (!s)
-		return (0);
-	result = (char **) malloc(sizeof(char *) * ft_splitcount(s, c) + 1);
-	if (!result)
-		return (0);
 	i = 0;
+	result = malloc(sizeof(char *) * (splitcount(s, c) + 1));
+	if (!result)
+		return (NULL);
 	while (*s)
 	{
 		if (*s != c)
 		{
-			len = 0;
-			while (*s && *s != c && ++len)
+			t_len = 0;
+			while (*s && *s != c && ++t_len)
 				++s;
-			result[i++] = ft_substr(s - len, 0, len);
+			result[i++] = ft_substr(s - t_len, 0, t_len);
 		}
 		else
 			++s;
 	}
-	result[i] = 0;
+	result[i++] = 0;
 	return (result);
 }

@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strnstr.c                                       :+:    :+:            */
+/*   ft_lstmap.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/13 16:29:32 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/21 11:03:13 by tcensier      ########   odam.nl         */
+/*   Created: 2022/10/21 17:53:30 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/21 18:08:51 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t	i;
-	size_t	n_len;
-	size_t	index;
+	t_list	*new_lst;
+	t_list	*temp;
 
-	n_len = ft_strlen(needle);
-	index = 0;
-	if (haystack == needle || !n_len)
-		return ((char *)haystack);
-	while (haystack[index] && index < len)
+	new_lst = 0;
+	while (lst)
 	{
-		i = 0;
-		while (needle[i] && haystack[index + i] == needle[i] && index + i < len)
-			++i;
-		if (i == n_len)
-			return ((char *)haystack + index);
-		++index;
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&lst, del);
+			return (0);
+		}
+		ft_lstadd_back(&new_lst, temp);
+		lst = lst->next;
 	}
-	return (NULL);
+	return (new_lst);
 }

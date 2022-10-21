@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_calloc.c                                        :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/20 13:02:47 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/21 14:59:18 by tcensier      ########   odam.nl         */
+/*   Created: 2022/10/21 11:41:35 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/21 11:44:52 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	ft_putchar_fd(char c, int fd)
 {
-	void	*p;
-
-	p = malloc(size * nmemb);
-	if (!p)
-		return (0);
-	ft_bzero(p, size * nmemb);
-	return (p);
+	write(fd, &c, 1);
 }
