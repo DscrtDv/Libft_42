@@ -10,7 +10,7 @@ I am not one to judge uppon the difficulty scale of different languages, as each
 That being said, it is important to remember the crucial role and influence C has within computer sciences history and its developpment. 
 If a developper understands and masters C, it will most likely comprehend higher level of abstraction fairly easily.
 There's always a developper to tell you to go lower level if you don't wanna be a noob. That is not an absolute truth.
-.
-..
-...
+
+
+
 Learn C though.
