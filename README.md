@@ -21,4 +21,4 @@ Learn C though.
 
 ## Author
 
-Discret Dev: Tem Censier
+DscrtDv
