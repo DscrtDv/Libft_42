@@ -33,8 +33,8 @@ bonus: $(OBJFILES) $(BOBJFILES)
 	@$(CC) -c $(CFLAGS) -o $@ $<
 
 clean:
-	@rm -f $(OBJFILES)
-	@echo "OBJ files successfully deleted."
+	@rm -f $(OBJFILES) $(BOBJFILES)
+	@echo "OBJ and BOBJ files successfully deleted."
 
 fclean: clean
 	@rm -f $(NAME)
