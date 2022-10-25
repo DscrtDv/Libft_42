@@ -6,7 +6,7 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/20 13:04:09 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/20 13:09:33 by tcensier      ########   odam.nl         */
+/*   Updated: 2022/10/25 09:32:49 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -25,7 +25,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*end;
 
 	if (!s1 || !set)
-		return (0);
+		return (NULL);
 	start = (char *) s1;
 	end = start + ft_strlen(s1);
 	while (*start && checkset(*start, set))

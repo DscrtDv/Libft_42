@@ -6,7 +6,7 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 13:59:39 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/22 13:28:35 by tcensier      ########   odam.nl         */
+/*   Updated: 2022/10/25 09:15:32 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*p;
-	char	temp;
+	size_t	index;
 
-	temp = c;
-	p = 0;
-	while (*s != '\0')
-	{
-		if (*s == temp)
-			p = (char *) s;
-		s++;
-	}
-	if (!temp && *s == '\0')
-		return (p = (char *)s);
-	return (p);
+	index = ft_strlen(s);
+	if (!(unsigned char)c)
+		return ((char *)&s[index]);
+	while (index--)
+		if (s[index] && s[index] == (unsigned char) c)
+			return ((char *)&s[index]);
+	return (NULL);
 }

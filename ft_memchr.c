@@ -6,7 +6,7 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 15:01:13 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/13 16:12:37 by tcensier      ########   odam.nl         */
+/*   Updated: 2022/10/25 09:22:52 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	temp = (unsigned char *) s;
 	while (n--)
 	{
-		if (*temp != (unsigned char) c)
-			temp++;
-		else
+		if (*temp == (unsigned char) c)
 			return (temp);
+		temp++;
 	}
-	return (0);
+	return (NULL);
 }

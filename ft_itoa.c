@@ -6,7 +6,7 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/20 14:03:40 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/20 17:31:27 by tcensier      ########   odam.nl         */
+/*   Updated: 2022/10/25 11:10:13 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_itoa(int n)
 	len = intlen(temp_n);
 	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
-		return (0);
+		return (NULL);
 	if (temp_n < 0)
 	{
 		result[0] = '-';
