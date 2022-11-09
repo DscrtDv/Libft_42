@@ -28,10 +28,10 @@ Learn C though.
 3.  **Bonus Functions:** Functions for linked list manipulation.
 4.  **Personal Functions:** Functions that I judge to be usefull in future projects. This section will be updated regularly.
 
-Libc functions | Additional functions | Bonus Functions | Personal Functions
-:----------- | :-----------: | :-----------: | -----------:
-isalpha      |  ft_substr    |  ft_lstnew       | ft_putchar
-isdigit      |  ft_strjoin   |  ft_lstadd_front | ft_putstr
+Libc functions | Additional functions | Bonus Functions | Personal Functions | Others
+:----------- | :-----------: | :-----------: | :----------: | -----------:
+isalpha      |  ft_substr    |  ft_lstnew       | ft_putchar  | libft.h
+isdigit      |  ft_strjoin   |  ft_lstadd_front | ft_putstr   | Makefile
 isalnum      |  ft_strtrim   |  ft_lstsize      | ft_itoabase
 isascii      |  ft_split     |  ft_lstlast      |
 isprint      |  ft_itoa      |  ft_lstadd_back  |
