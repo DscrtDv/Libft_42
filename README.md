@@ -2,6 +2,8 @@
 
 # LIBFT
 
+https://img.shields.io/badge/language-C-red
+
 Libft is the very first project available at 42 schools.
 
 ## Description
@@ -19,13 +21,51 @@ There's always a developper to tell you to go lower level if you don't wanna be 
 
 Learn C though.
 
+## Content
+1.  **Libc Functions:** Some of the standard C functions.
+2.  **Additional functions:** Functions that should be usefull in future projects.
+3.  **Bonus Functions:** Functions for linked list manipulation.
+4.  **Personal Functions:** Functions that I judge to be usefull in future projects. This section will be updated regularly.
+
+Libc functions | Additional functions | Bonus Functions | Personal Functions
+:----------- | :-----------: | :-----------: | -----------:
+isalpha      |  ft_substr    |  ft_lstnew       | ft_putchar
+isdigit      |  ft_strjoin   |  ft_lstadd_front | ft_putstr
+isalnum      |  ft_strtrim   |  ft_lstsize      | ft_itoabase
+isascii      |  ft_split     |  ft_lstlast      |
+isprint      |  ft_itoa      |  ft_lstadd_back  |
+strlen       |  ft_strmapi   |  ft_lstdelone    |
+memset       |  ft_striteri  |  ft_lstclear     |
+bzero        |  ft_putchar_fd|  ft_lstiter      |
+memcpy       |  ft_putstr_fd |  ft_lstmap       |
+strlcpy      |  ft_putendl_fd|
+strlcat      |  ft_putnbr_fd |
+toupper      |  
+tolower      |
+strchr       |
+strrchr      |
+strncmp      |
+memchr       |
+memcmp       |
+strnstr      |
+atoi         |
+calloc       |
+strdup       |
 ## Use
+
+```
+git clone https://github.com/DscrtDv/Libft_42.git
+cd Libft_42
+make
+```
 **This library comes with a makefile**
 + make: builds the whole project into an archive.
 + make bonus: adds bonus file to the archive (linked list).
 + make clean: deletes all object files.
 + make fclean: makes clean and deletes archive file.
 
+## Project including libft
+Printf: https://github.com/DscrtDv/Printf_42
 ## Author
 
 DscrtDv
