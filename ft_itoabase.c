@@ -1,55 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_itoa.c                                          :+:    :+:            */
+/*   num_utils.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/20 14:03:40 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/20 17:31:27 by tcensier      ########   odam.nl         */
+/*   Created: 2022/11/03 10:36:36 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/11/03 10:37:16 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stddef.h>
 
-static size_t	intlen(long int n)
+#include <stddef.h>
+#include <stdlib.h>
+
+static size_t	ulong_len(long long n, unsigned long base)
 {
 	size_t	len;
 
 	len = 0;
-	if (n <= 0)
+	if (n == 0)
 		len++;
 	while (n)
 	{
-		n /= 10;
+		n /= base;
 		len++;
 	}
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoabase(long long n, char *set, unsigned long base, int sign)
 {
-	size_t		len;
-	char		*result;
-	long int	temp_n;
+	size_t	len;
+	char	*result;
 
-	temp_n = (long int) n;
-	len = intlen(temp_n);
-	result = malloc(sizeof(char) * (len + 1));
+	if (n < 0 && sign)
+		n *= -1;
+	len = ulong_len(n, base) + sign;
+	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
-		return (0);
-	if (temp_n < 0)
-	{
-		result[0] = '-';
-		temp_n *= -1;
-	}
-	if (temp_n == 0)
+		return (NULL);
+	if (n == 0)
 		result[0] = '0';
+	else if (sign == 1)
+		result[0] = '-';
 	result[len] = '\0';
-	while (temp_n)
+	while (n)
 	{
-		result[len - 1] = temp_n % 10 + '0';
-		temp_n /= 10;
+		result[len - 1] = set[(unsigned)n % base];
+		n /= base;
 		len--;
 	}
 	return (result);

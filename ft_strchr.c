@@ -9,7 +9,6 @@
 /*   Updated: 2022/10/22 13:04:20 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

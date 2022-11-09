@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/10 12:29:23 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

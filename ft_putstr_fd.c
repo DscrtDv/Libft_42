@@ -6,11 +6,14 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/21 11:45:32 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/25 11:14:08 by tcensier      ########   odam.nl         */
+/*   Updated: 2022/10/22 13:22:42 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
+#include <unistd.h>
+
+size_t	ft_strlen(const char *str);
 
 void	ft_putstr_fd(char *s, int fd)
 {

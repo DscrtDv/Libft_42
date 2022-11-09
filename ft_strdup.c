@@ -6,7 +6,7 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/20 13:00:40 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/25 11:09:05 by tcensier      ########   odam.nl         */
+/*   Updated: 2022/10/22 13:17:36 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s)
 	len = ft_strlen(s) + 1;
 	p = malloc(sizeof(char) * len);
 	if (!p)
-		return (NULL);
+		return (0);
 	ft_strlcpy(p, s, len);
 	return (p);
 }

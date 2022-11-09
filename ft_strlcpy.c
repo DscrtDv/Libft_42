@@ -9,8 +9,7 @@
 /*   Updated: 2022/10/13 10:25:13 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
+#include <stddef.h>
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {

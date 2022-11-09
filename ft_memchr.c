@@ -6,11 +6,10 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/13 15:01:13 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/25 09:22:52 by tcensier      ########   odam.nl         */
+/*   Updated: 2022/10/13 16:12:37 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -19,9 +18,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	temp = (unsigned char *) s;
 	while (n--)
 	{
-		if (*temp == (unsigned char) c)
+		if (*temp != (unsigned char) c)
+			temp++;
+		else
 			return (temp);
-		temp++;
 	}
-	return (NULL);
+	return (0);
 }

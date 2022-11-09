@@ -6,14 +6,15 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/21 11:19:17 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/25 10:14:07 by tcensier      ########   odam.nl         */
+/*   Updated: 2022/10/22 12:59:51 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	splitcount(const char *s, char c)
+char	**splitalloc(const char *s, char c)
 {
 	size_t	count;
+	char	**result;
 
 	count = 0;
 	while (*s)
@@ -27,7 +28,8 @@ size_t	splitcount(const char *s, char c)
 		else
 			++s;
 	}
-	return (count);
+	result = malloc(sizeof(char *) * (count + 1));
+	return (result);
 }
 
 char	**ft_split(const char *s, char c)
@@ -35,10 +37,8 @@ char	**ft_split(const char *s, char c)
 	char	**result;
 	size_t	t_len;
 	size_t	i;
-	size_t	s_count;
 
-	s_count = splitcount(s, c);
-	result = malloc(sizeof(char *) * (s_count + 1));
+	result = splitalloc(s, c);
 	if (!result)
 		return (NULL);
 	i = 0;
