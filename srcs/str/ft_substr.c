@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstmap.c                                        :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/21 17:53:30 by tcensier      #+#    #+#                 */
-/*   Updated: 2022/10/22 13:26:25 by tcensier      ########   odam.nl         */
+/*   Created: 2022/10/20 13:02:00 by tcensier      #+#    #+#                 */
+/*   Updated: 2022/10/20 13:02:33 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	t_list	*new_lst;
-	t_list	*temp;
+	char	*sub_s;
 
-	new_lst = NULL;
-	while (lst)
+	if (!s)
+		return (0);
+	if (ft_strlen(s) < start)
 	{
-		temp = ft_lstnew(f(lst->content));
-		if (!temp)
-		{
-			ft_lstclear(&lst, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&new_lst, temp);
-		lst = lst->next;
+		len = 0;
+		start = 0;
 	}
-	return (new_lst);
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	sub_s = malloc(sizeof(char) * (len + 1));
+	if (!sub_s)
+		return (NULL);
+	ft_strlcpy(sub_s, s + start, len + 1);
+	return (sub_s);
 }
