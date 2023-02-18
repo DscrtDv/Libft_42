@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/22 12:59:51 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "../../includes/libft.h"
 #include <stddef.h>
 
 char	**splitalloc(const char *s, char c)

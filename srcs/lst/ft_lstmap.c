@@ -10,36 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*new_lst;
-	t_list	*temp;
-
-	if (!f || !del)
-		return (NULL);
-	new_lst = NULL;
-	while (lst)
-	{
-		if (!(temp = ft_lstnew((*f)(lst->content))))
-		{
-			while (new_lst)
-			{
-				temp = new_lst->next;
-				(*del)(new_lst->content);
-				free(new_lst);
-				new_lst = temp;
-			}
-			lst = NULL;
-			return (free(new_lst), NULL);
-		}	
-		ft_lstadd_back(&new_lst, temp);
-		lst = lst->next;
-	}
-	return (new_lst);
-}
-*/
+#include "../../includes/libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

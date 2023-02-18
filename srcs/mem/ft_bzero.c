@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/07 16:11:07 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "../../includes/libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

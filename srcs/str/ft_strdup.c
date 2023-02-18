@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/22 13:17:36 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "../../includes/libft.h"
 
 char	*ft_strdup(const char *s)
 {

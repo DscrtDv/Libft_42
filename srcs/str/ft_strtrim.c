@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/20 13:09:33 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "../../includes/libft.h"
 
 int	checkset(char c, char const *set)
 {

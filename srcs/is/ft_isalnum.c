@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/07 15:59:22 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "../../includes/libft.h"
 
 int	ft_isalnum(int c)
 {
