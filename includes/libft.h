@@ -6,7 +6,7 @@
 /*   By: tcensier <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/07 12:54:05 by tcensier      #+#    #+#                 */
-/*   Updated: 2023/09/06 16:02:41 by tcensier      ########   odam.nl         */
+/*   Updated: 2023/09/11 13:44:38 by tcensier      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_free_array(char **array);
 
 //bonus
 l_list	*ft_lstnew(void *content);
