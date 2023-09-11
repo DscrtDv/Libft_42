@@ -3,7 +3,7 @@ NAME		= libft.a
 
 DIR_SRCS	= srcs
 DIR_OBJS	= objs
-SUBDIRS		= is to mem str put lst free
+SUBDIRS		= is to mem str put lst
 
 SRCS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
 OBJS_DIRS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJS)/, $(dir)))

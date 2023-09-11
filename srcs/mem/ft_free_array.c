@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_freearr.c                                       :+:    :+:            */
+/*   ft_free_array.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: tcensier <tcensier@student.codam.nl>         +#+                     */
+/*   By: tim <tim@student.codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/09/11 13:43:06 by tcensier      #+#    #+#                 */
-/*   Updated: 2023/09/11 13:43:29 by tcensier      ########   odam.nl         */
+/*   Created: 2023/09/04 12:19:53 by tim           #+#    #+#                 */
+/*   Updated: 2023/09/04 12:24:08 by tim           ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_free_array(char **array)
+void    ft_free_array(char **arr)
 {
-	size_t	i;
+    size_t  i;
 
-	i = 0;
-	if (array == NULL)
-		return ;
-	while (array[i])
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
+    i = 0;
+    if (!arr)
+        return ;
+    while (arr[i])
+    {
+        free(arr[i]);
+        i++;
+    }
+    free(arr);
 }
